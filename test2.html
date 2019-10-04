@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: lightcoral
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <button onclick="resize()">dust</button> -->
+    <div id="info" >
+        <img src= "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiIzuOIotXkAhU16KYKHayBArAQjRx6BAgBEAQ&url=https%3A%2F%2Ftechcrunch.com%2F2015%2F08%2F20%2Ffacebook-gif-ads%2F&psig=AOvVaw1wFupPs6siMo80OlKjVVXY&ust=1568720675867628">
+    </div>
+    <script type="text/javascript">
+        window.onresize = windowSizeChanged;
+        windowSizeChanged();
+
+        function windowSizeChanged() {
+            var div = document.getElementById('info');
+            var height = window.innerHeight;
+            var width = window.innerWidth;
+            var gif = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiIzuOIotXkAhU16KYKHayBArAQjRx6BAgBEAQ&url=https%3A%2F%2Ftechcrunch.com%2F2015%2F08%2F20%2Ffacebook-gif-ads%2F&psig=AOvVaw1wFupPs6siMo80OlKjVVXY&ust=1568720675867628";
+            div.innerHTML = width + 'x' + height;
+            // if (width > 500 && height > 500) {
+
+            //     if (width > height) {
+            //         alert('Bredden er større enn høyden');
+            //     } else if (width == height) {
+            //         alert('de er like')
+
+            //     } else {
+            //         alert('høyden er større en bredden');
+            //     }
+            // }
+            if (height == width  || width == heigth) {
+                alert("gratulerer!");
+                
+
+
+                
+            }
+        }
+
+    //    function resize() {
+    //         var n = Math.floor(Math.random() * 500);
+    //         var m = Math.floor(Math.random() * 500);
+    //     window.innerHeight = n;
+    //     window.innerWidth = m; 
+    //     windowSizeChanged();  
+    //    }
+     
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>last siden på nytt og få ny box</p>
+
+    <div id="resultat"></div>
+    <div id="text"></div>
+   
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var resultatHtmlDiv = document.getElementById('text');
+        var Num1Input = document.getElementById('Num1');
+        var Num2Input = document.getElementById('Num2');
+        var boxDiv = document.getElementById('box');
+
+        randomBox();
+
+        function randomBox() {
+            var Num1 = Math.floor(Math.random() * 500) ;
+            var Num2 = Math.floor(Math.random() * 500); 
+            var sum = Num1 + Num2;
+            var bordersize = 5 + Math.floor(Math.random() * 5);
+
+            console.log('kjørrr');
+            resultatDiv.style = `height: ${Num1}px;
+            width: ${Num2}px; border: ${bordersize}px solid yellow;`
+
+            resultatHtmlDiv.innerHTML = `height: ${Num1}px;
+            width: ${Num2}px; border: ${bordersize}px solid yellow;`;
+        }
+    </script>
+</body>
+</html>

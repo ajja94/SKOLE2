@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <style>
+        body{
+             background-color: rgb(255, 250, 255);
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 75px 75px 75px;
+            padding: 10%;
+            margin: auto 0px; 
+            text-align: center;
+            
+        }
+
+        .grid-item {
+            background-color: rgb(144, 150, 144);
+            margin: 10px;
+            padding: 10px;
+            font-size: 300%;
+            height: 50px;
+            width: 50px;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+           
+            
+        }
+
+        .grid-item {
+            color: lime;
+            font-size: 40px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <button id="Tilbake" onclick="Tilbake()">Tilbake</button>
+
+    <div class="grid-container">
+        <div id="1" class="grid-item" onclick="settX(this)"> </div>
+        <div id="2" class="grid-item" onclick="settX(this)"> </div>
+        <div id="3" class="grid-item" onclick="settX(this)"> </div>
+        <div id="4" class="grid-item" onclick="settX(this)"> </div>
+        <div id="5" class="grid-item" onclick="settX(this)"> </div>
+        <div id="6" class="grid-item" onclick="settX(this)"> </div>
+        <div id="7" class="grid-item" onclick="settX(this)"> </div>
+        <div id="8" class="grid-item" onclick="settX(this)"> </div>
+        <div id="9" class="grid-item" onclick="settX(this)"> </div>
+
+
+    </div>
+    <button onclick="restart()">Restart</button>
+    <script>
+        var box1;
+        var box2;
+        var box3;
+        var box4;
+        var box5;
+        var box6;
+        var box7;
+        var box8;
+        var box9;
+        var isGameFinished = false;
+        var moves = 0;
+        function settX(button) {
+            if (button.innerHTML == "O" || button.innerHTML == "X") return;
+            if (isGameFinished == false) {
+                button.innerHTML = "X";
+                chekwinning("x");
+
+            }
+            if (!isGameFinished) {
+                setO();
+                chekwinning("o");
+            }
+
+
+
+        }
+        var item = document.getElementsByClassName("grid-item");
+        function setO() {
+            // document.getElementsByClassName("grid-item")[7].innerHTML = "O"
+            var O = Math.floor(Math.random() * item.length)
+            if (item[O].innerHTML != "X" && item[O].innerHTML != "O") {
+                item[O].innerHTML = "O";
+            } else {
+                setO();
+            }
+
+        }
+        function chekwinning(sign) {
+            box1 = document.getElementById("1").innerHTML;
+            box2 = document.getElementById("2").innerHTML;
+            box3 = document.getElementById("3").innerHTML;
+            box4 = document.getElementById("4").innerHTML;
+            box5 = document.getElementById("5").innerHTML;
+            box6 = document.getElementById("6").innerHTML;
+            box7 = document.getElementById("7").innerHTML;
+            box8 = document.getElementById("8").innerHTML;
+            box9 = document.getElementById("9").innerHTML;
+            moves++;
+
+
+
+            if ((box1 == box2 && box2 == box3 && box1 != " ") ||
+                (box1 == box4 && box4 == box7 && box1 != " ") ||
+                (box1 == box5 && box5 == box9 && box1 != " ") ||
+                (box2 == box5 && box5 == box8 && box2 != " ") ||
+                (box3 == box6 && box6 == box9 && box3 != " ") ||
+                (box3 == box5 && box5 == box7 && box3 != " ") ||
+                (box4 == box5 && box5 == box6 && box4 != " ") ||
+                (box7 == box8 && box8 == box9 && box7 != " ")) {
+
+                alert(sign + " vinner!!!!!");
+                isGameFinished = true;
+                console.log("dette er verdien i moves i vinner gren: " + moves);
+
+            }
+            else if (moves == 9) {
+                alert("uavgjort")
+                isGameFinished = true;
+                console.log("dette er verdien i moves i uavgjort gren: " + moves);
+
+            }
+        }
+        function restart() {
+            isGameFinished = false;
+            moves = 0;
+            for (let i = 0; i < 9; i++) {
+
+                document.getElementsByClassName("grid-item")[i].innerHTML = " ";
+            }
+            console.log("dette er verdien i moves i restart: " + moves);
+
+        }
+        function Tilbake() {
+            window.location.href = "obli1.html";
+        }
+    </script>
+
+</body>
+
+</html>

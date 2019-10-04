@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Kodelås</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 75px 75px 20px;
+            padding: 10%;
+            margin-top:-10px;
+            text-align: center;
+        }
+
+        .grid-item {
+            background-color:white;
+            margin-top:10px;
+            padding:20px;
+            height:30px;
+            width:30px;
+            font-size:30px;
+            text-align:center;
+     
+          
+        }
+
+        .grid-item1 {
+            background-color: white;
+            margin-top: 10px;
+            padding: 20px;
+            height: 30px;
+            width: 30px;
+            font-size: 30px;
+            text-align: center;
+            margin-left:75px;
+        }
+        .grid-container1{
+
+            background-color:white;
+            margin-top:20px;
+            padding:35px;
+            height:35px;
+            width:150px;
+            font-size:30px;
+            text-align:center;
+            margin-left:150px;
+            margin-bottom: -150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tall" class="grid-container1">knekk koden</div>
+    <div class="grid-container">
+       
+        <div id="1" class="grid-item" onclick="t(this.innerHTML)">1</div>
+        <div id="2" class="grid-item" onclick="t(this.innerHTML)">2</div>
+        <div id="3" class="grid-item" onclick="t(this.innerHTML)">3</div>
+        <div id="4" class="grid-item" onclick="t(this.innerHTML)">4</div>
+        <div id="5" class="grid-item" onclick="t(this.innerHTML)">5</div>
+        <div id="6" class="grid-item" onclick="t(this.innerHTML)">6</div>
+        <div id="7" class="grid-item" onclick="t(this.innerHTML)">7</div>
+        <div id="8" class="grid-item" onclick="t(this.innerHTML)">8</div>
+        <div id="9" class="grid-item" onclick="t(this.innerHTML)">9</div>
+        <div id="ok" class="grid-item1" onclick="t(this.innerHTML)">ok</div><br />
+
+
+    </div>
+
+    <script>
+        var box1;
+        var box2;
+        var box3;
+        var box4;
+        var box5;
+        var box6;
+        var box7;
+        var box8;
+        var box9;
+        var boxok;
+        var tall = " ";
+        var isGameFinished = false;
+
+        function t(trykk) {
+          /*  if (tall - length == 5) {
+                clear();
+                txt.innerHTML = "for mange tall!"
+            }*/
+            if
+                (document.getElementById("tall").innerHTML == "knekk koden") {
+                document.getElementById("tall").innerHTML = "";
+
+            }
+           document.getElementById("tall").innerHTML += trykk;
+        }
+
+
+        function chekwinning(sign) {
+            box1 = document.getElementById("1").innerHTML;
+            box2 = document.getElementById("2").innerHTML;
+            box3 = document.getElementById("3").innerHTML;
+            box4 = document.getElementById("4").innerHTML;
+            box5 = document.getElementById("5").innerHTML;
+            box6 = document.getElementById("6").innerHTML;
+            box7 = document.getElementById("7").innerHTML;
+            box8 = document.getElementById("8").innerHTML;
+            box9 = document.getElementById("9").innerHTML;
+            moves++;
+
+
+            if (box3 == tall && box8 == tall && box == tall && box2 == tall != " ") {
+                alert(sign + "du knakk koden!");
+            }
+        }
+
+    </script>
+</body>
+</html>

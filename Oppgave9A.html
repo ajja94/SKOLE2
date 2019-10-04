@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button id="buttonA" onclick="chooseBox('A')">Velg Div A</button>
+    <button id="buttonA" onclick="chooseBox('B')">Velg Div B</button><br />
+
+    <input id="bredde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="1" />
+    <input id="høyde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="1" />
+
+    <div id="A" style="border:1px solid black;">Dette er Div A</div><br />
+    <div id="B" style="border:1px solid black;">Dette er Div B</div><br />
+
+    <div id="resultat"></div>
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var breddeInput = document.getElementById('bredde');
+        var høydeInput = document.getElementById('høyde');
+        var buttonAInput = document.getElementById('A');
+        var buttonBInput = document.getElementById('B');
+        var valgtDiv;
+
+        chooseBox();
+        function chooseBox(divBokstav) {
+            valgtDiv = document.getElementById(divBokstav);
+        }
+
+
+        function calculate() {
+            var bredde = breddeInput.value;
+            var høyde = høydeInput.value;
+            var arealSum = bredde * høyde;
+
+            valgtDiv.style.width = bredde + 'px';
+            valgtDiv.style.height = høyde + 'px';
+
+
+            valgtDiv.innerHTML = '' +
+                bredde + '*' + høyde + ' = ' +
+                'Areal: ' + arealSum;
+
+        }
+    </script>
+</body>
+</html>

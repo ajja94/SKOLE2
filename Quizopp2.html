@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Quiz Time</title>
+    <style>
+        body {
+            background-image: url("https://www.elegantthemes.com/blog/wp-content/uploads/2019/04/buzzfeed-quiz.jpg");
+            background-repeat: repeat-x;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="Tilbake" onclick="Tilbake()">Tilbake</button>
+
+    <div>Hvilket bilmerke har mest bøter?</div><br />
+    <div id="A"></div>
+
+    <button onclick="A()">Audi</button>
+    <button onclick="B()">BMW</button>
+    <button onclick="C()">Toyota</button><br />
+
+    <div>Norges nordligste by?</div><br />
+    <div id="E"></div>
+
+    <button onclick="D()">Tromsø</button>
+    <button onclick="E()">Longyearbyen</button>
+    <button onclick="F()">Kautokeino</button><br />
+
+    <div>Norges hovedstad?</div><br />
+    <div id="G"></div>
+
+    <button onclick="G()">Oslo</button>
+    <button onclick="H()">Bergen</button>
+    <button onclick="I()">Tromsø</button>
+
+    <div>Når skjedde slager på stiklestad?</div><br />
+    <div id="L"></div>
+
+    <button onclick="J()">1965</button>
+    <button onclick="K()">1035</button>
+    <button onclick="L()">1030</button>
+
+    <div>Når fikk Norge grunnlov?</div><br />
+    <div id="O"></div>
+
+    <button onclick="M()">1815</button>
+    <button onclick="N()">1914</button>
+    <button onclick="O()">1814</button>
+    <div id="riktigesvar">
+    </div>
+    <div id="feilsvar">
+    </div>
+    <script>
+
+        var AntallRiktig = 0;
+        var AntallFeil = 0;
+        var checkwinning = 5;
+        svar();
+
+        function Tilbake() {
+              window.location.href = "obli1.html";
+        }
+
+        function A() {
+            document.getElementById('A').innerHTML = 'Riktig!';
+            AntallRiktig++;
+            svar();
+        }
+        function B() {
+            document.getElementById('A').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function C() {
+            document.getElementById('A').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function D() {
+            document.getElementById('E').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function E() {
+            document.getElementById('E').innerHTML = 'Riktig!';
+            AntallRiktig++;
+            svar();
+        }
+        function F() {
+            document.getElementById('E').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function G() {
+            document.getElementById('G').innerHTML = 'Riktig!';
+            AntallRiktig++;
+            svar();
+        }
+        function H() {
+            document.getElementById('G').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function I() {
+            document.getElementById('G').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function J() {
+            document.getElementById('L').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function K() {
+            document.getElementById('L').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function L() {
+            document.getElementById('L').innerHTML = 'Riktig!';
+            AntallRiktig++;
+            svar();
+        }
+        function M() {
+            document.getElementById('O').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function N() {
+            document.getElementById('O').innerHTML = 'FEIL';
+            AntallFeil++;
+            svar();
+        }
+        function O() {
+            document.getElementById('O').innerHTML = 'Riktig!';
+            AntallRiktig++;
+            svar();
+        }
+
+        function svar() {
+            console.log(AntallFeil, AntallRiktig);
+            document.getElementById('riktigesvar').innerHTML = AntallRiktig;
+            document.getElementById('feilsvar').innerHTML = AntallFeil;
+            if (checkwinning == AntallRiktig + AntallFeil) {
+                alert: ("VANT");
+                AntallRiktig = 0;
+                AntallFeil = 0;
+            }
+        }
+    </script>
+</body>
+</html>

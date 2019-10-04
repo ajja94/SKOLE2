@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Oppgave 8!</title>
+    <style>
+        .stil {
+            background-color: red;
+        }
+
+        .stil1 {
+            background-image: url(meme5.jpg);
+            width: 1000px;
+            height: 560px;
+        }
+
+        .stil2 {
+            background-color: saddlebrown;
+            border: 5px dashed black;
+        }
+
+        .stil3 {
+            border: Black groove 20px;
+        }
+
+        .stil4 {
+            background-color: darkorchid;
+            border: hotpink dotted 10px;
+
+        }
+    </style>
+
+</head>
+<body>
+    <input id="text" type="text" />
+    <h2 id="overskrift">Oppgave8</h2>
+    <div id="box"onclick="divChooser(this)">Trykk</div>
+    <div id="box1" onclick="divChooser(this)">Trykk</div>
+    <div id="box2" onclick="divChooser(this)">Trykk</div>
+    <div id="box3" onclick="divChooser(this)">Trykk</div>
+    <div id="box4" onclick="divChooser(this)">Trykk</div>
+    <input id="chk" name="chk" type="radio" onchange="toggleStyle(this)" />
+    <input id="chk1" name="chk" type="radio" onchange="toggleStyle1(this)" />
+    <input id="chk2" name="chk" type="radio" onchange="toggleStyle2(this)" />
+    <input id="chk3" name="chk" type="radio" onchange="toggleStyle3(this)" />
+    <input id="chk4" name="chk" type="radio" onchange="toggleStyle4(this)" />
+
+    <script>
+        var textInput = document.getElementById('text');
+        var h2Element = document.getElementById('overskrift');
+        var checkboxInput = document.getElementById('checkbox');
+        var valgtDiv;
+
+        function divChooser(chosenDiv) {
+
+            valgtDiv = chosenDiv;
+        }
+
+        function toggleStyle() {
+            var isChecked = document.getElementById('chk').checked;
+            valgtDiv.classList = '';
+            valgtDiv.classList.toggle('stil', isChecked);
+        }
+        function toggleStyle1() {
+            var isChecked = document.getElementById('chk1').checked;
+            valgtDiv.classList = '';
+            valgtDiv.classList.toggle('stil1', isChecked);
+        }
+        function toggleStyle2() {
+            var isChecked = document.getElementById('chk2').checked;
+            valgtDiv.classList = '';
+            valgtDiv.classList.toggle('stil2', isChecked);
+        }
+        function toggleStyle3() {
+            var isChecked = document.getElementById('chk3').checked;
+            valgtDiv.classList = '';
+            valgtDiv.classList.toggle('stil3', isChecked);
+        }
+        function toggleStyle4() {
+            var isChecked = document.getElementById('chk4').checked;
+            valgtDiv.classList = '';
+            valgtDiv.classList.toggle('stil4', isChecked);
+        }
+
+    </script>
+</body>
+</html>

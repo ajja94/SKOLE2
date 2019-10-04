@@ -1,0 +1,60 @@
+<hmlt>
+    <head>
+        <title>Aviser-test</title>
+        <style>
+        ul
+        {
+            background-color: blue ;
+            border:black 20px solid;
+        }
+        li
+        {
+            color:chartreuse
+        }
+        div
+        {
+            margin: 20px;
+            padding: 20px;
+            background-color: beige
+        }
+        div.type1
+        {
+            color:hotpink
+        }
+        div.type2
+        {
+            color: darkorange
+        }    
+       </style>
+    </head>
+    <body>
+            Aviser<br/>
+            <hr/>
+            <a href="http://www.vg.no">VG</a>
+            <br/>
+            <a href="http://www.Aftenposten.no">Aftenposten</a>
+            <br/>
+            <a href="http://www.op.no">Østlandsposten</a>
+            <br>
+            <a href="http://www.Dagbladet.no">Dagbladet</a>
+            <br>
+            <button><a href="http://www.Dagbladet.no">Trykk</a></button>
+        
+            <ul>
+                <li>avis-liste</li>
+                <li>andre-aviser</li>
+                <li>tredje-avis</li>
+   
+            </ul>
+            <div>Avistest</div>
+            <div class="type1"onclick="siHei(this)">suprisee</div>
+            <div class="type2">Avisdiv2</div>
+
+            <script>
+                function siHei(element){
+                element.innerHTML = 'Hei!';
+            }
+            </script>
+    </body>
+
+</hmlt>

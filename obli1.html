@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>OBLI</title>
+    <style>
+        body {
+            background-color: darkseagreen;
+        }
+
+        #grid-container {
+            display: grid;
+            grid-template-rows: 100px 1fr;
+            grid-template-areas: "Meny" "ned";
+            grid-gap: 10px;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #Meny {
+            grid-area: Meny;
+        }
+
+        #ned {
+            grid-area: ned;
+        }
+
+        .grid-container1 {
+            display: grid;
+            grid-template-columns: 150px 150px 50px;
+            padding: 200px;
+            margin-top: 20px;
+            text-align: center;
+            background-color: azure;
+            width: 250px;
+            margin-left: 50px;
+        }
+        #Knapp{
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <!--<h1>Velkommen!</h1><br />-->
+        <div id="Meny">
+            <select id="meny" onchange="showDiv(this)">
+                <option selected value="Meny">Meny</option>
+                <option value="Alt1">Alt1</option>
+                <option value="Alt2">Alt2</option>
+            </select>
+            <button class="Knapp" onclick="myFunction()">Endre</button>
+        </div>
+        
+        <div id="ned">
+            <div id="one" class="grid-container1 div">
+                <style scoped>
+                    @import "firkant1.css";
+                </style>
+                <div onmouseover="mOver(this)" onmouseout="mOut(this)"
+                     style="background-color:green;width:120px;height:20px;padding:40px;">Dra Over</div>
+            </div>
+           
+        </div>
+    </div>
+
+
+   
+
+    <script>
+
+        var Hei = "HALLO!";
+
+        function myFunction() {  /* her har du 16 581 375 farger og velge mellom:D**/
+            var fa = Math.floor(Math.random() * 255);
+            var rg = Math.floor(Math.random() * 255);
+            var ge = Math.floor(Math.random() * 255);
+
+            document.body.style.background = `rgb(${fa}, ${rg}, ${ge})`;
+
+        }
+
+        function showDiv(element) {
+            if
+                (element.value == "Alt1") {
+                    console.log('logg')
+                window.location.href = "Quizopp2.html";
+            }
+            else if (element.value == "Alt2") {
+                console.log('kjør')
+                window.location.href = "tictactoe.html.html";
+            }
+        }
+        function mOver(obj) {
+            obj.innerHTML = Hei;
+        }
+
+        function mOut(obj) {
+            obj.innerHTML = "Dra Over"
+        }
+    </script>
+
+</body>
+</html>

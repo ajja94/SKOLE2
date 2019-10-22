@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Oppgave10</title>
+</head>
+<body onload="testOnAll()">
+    <p>Ferdighet 2a - Alternative eventhandlere: onchange osv.</p>
+    <input type="text" onchange="testOnAll('change')" oninput="testOnAll('input')" />
+    <h3 onmouseover="testOnAll('mus')" onmouseout="testOnAll('muss')"> Test test test </h3>
+    <h2 id="info"></h2>
+
+    <script>
+        
+        function testOnAll(recieved) {
+
+            console.log(recieved);
+            
+
+        }
+    </script>
+</body>
+</html>

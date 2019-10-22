@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Oblig2</title>
+
+</head>
+<body>
+    <div>
+        <svg id="chart" width="500" viewBox="0 0 80 60"></svg>
+    </div>
+    Valgt stolpe: <i>ingen</i><br />
+    Verdi: <input type="number" min="1" max="10" /><button>Legg til stolpe</button>
+    <button disabled>Endre valgt stolpe</button><br />
+    <button disabled>Fjerne valgt stolpe</button>
+
+    <script>
+    // hjelpevariable for både view og controller
+    var svgTag = document.getElementById('chart');
+
+    // model
+    let numbers = [7, 3, 1, 5, 8];
+
+    // view
+    showChart();
+    function showChart() {
+        let svgInnerHtml = '';
+        for (let i = 0; i < numbers.length; i++) {
+            svgInnerHtml += createBar(numbers[i], i + 1);
+        }
+        svgTag.innerHTML = svgInnerHtml;
+    }
+
+    function createBar(number, barNo) {
+        const width = 8;
+        const spacing = 2;
+        let x = (barNo - 1) * (width + spacing);
+        let height = number * 10;
+        let y = 60 - height;
+        let color = calcColor(1, 10, barNo);
+        return `<rect width="${width}" height="${height}"
+                            x="${x}" y="${y}" fill="${color}"></rect>`;
+    }
+
+    function calcColor(min, max, val) {
+        var minHue = 240, maxHue = 0;
+        var curPercent = (val - min) / (max - min);
+        var colString = "hsl(" + ((curPercent * (maxHue - minHue)) + minHue) + ",100%,50%)";
+        return colString;
+    }
+
+    // controller (ingenting her ennå)
+    </script>
+
+
+</body>
+</html>

@@ -88,9 +88,18 @@
         function ok() {
 
             if (numberenterdSoFar == correctCode) {
+                clear();
                 tall.innerHTML = "YEY!!!";
             }
+            
+            else if (numberenterdSoFar.length  >= 4) {
+                clear();
+                tall.innerHTML = "Feil kode!"
+            }
 
+        }
+          function clear() {
+            numberenterdSoFar = "";
         }
     </script>
 </body>

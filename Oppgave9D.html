@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <div id="info"></div>
+
+    <ul>
+        <li>Hvem er minst?</li>
+        <li>Endre på tekstene!</li>
+
+    </ul>
+
+    <input type="text" id="txt1" oninput="FindFirst()" value="Espen" /> <br />
+    <input type="text" id="txt2" oninput="FindFirst()" value="Per" /> <br />
+    <input type="text" id="txt3" oninput="FindFirst()" value="Pål" /> <br />
+    <!--<input type="text" id="txt4" oninput="FindFirst()" value="Amanda" /> <br />-->
+
+    <script>
+        let infoDiv = document.getElementById('info');
+        let infoDiv2 = document.getElementById('info2');
+        let infoDiv3 = document.getElementById('info3');
+        let txtDiv1 = document.getElementById('txt1');
+        let txtDiv2 = document.getElementById('txt2');
+        let txtDiv3 = document.getElementById('txt3');
+        //let txtDiv4 = document.getElementById('txt4');
+
+        FindFirst();
+
+        function FindFirst() {
+            let txt1 = txtDiv1.value;
+            let txt2 = txtDiv2.value;
+            let txt3 = txtDiv3.value;
+            //let txt4 = txtDiv4.value;
+            let en = '<br> #1 er:'; 
+			let to = '<br> #2 er:';
+            let tre = '<br> #3 er:';
+
+            infoDiv.innerHTML = 'Soter teksten < br />';
+
+            infoDiv.innerHTML = 'Om vi sorterer de tre tekstene alfabetisk, er denne den første:<br/>';
+           if (txt1<=txt2 && txt1<=txt3 && txt2<=txt3) {  //hvis bokstavene i felt én er mindre (tidligere i alfabetet/mindre verdt/mindre tall) enn det i input to
+        infoDiv.innerHTML += en + txt1 + to + txt2 + tre + txt3;  //  OG input 1 er mindre enn eller likt input 3
+        }  //så skriv i infoDiv (første på rekka) først det første input, variablen to, og så ...de andre på samme måte :D
+       
+	   
+	   else if (txt1 <= txt2 && txt1 <= txt3 && txt3 <= txt2){ 
+                infoDiv.innerHTML += en + txt1 + to + txt3 + tre +txt2;  
+        } //hvis ikke den if'en slår til: så gjør dette (else if) se om inputet i felt 1 er større enn eller likt som felt to .. osv, er like krokodillegap som over ;)
+            else if (txt2 <= txt3 && txt3 <= txt1){ 
+                infoDiv.innerHTML += en + txt2 + to + txt3 + tre +txt1;
+            }
+            else if (txt2 <= txt3 && txt1 <=txt3) {
+                infoDiv.innerHTML += en + txt2 + to + txt1 + tre +txt3;
+            }
+            else if (txt2 <= txt1) {
+                infoDiv.innerHTML += en + txt3 + to + txt2 + tre +txt1;
+            }
+            else if (txt1 <= txt2) {
+                infoDiv.innerHTML += en + txt3 + to + txt1 + tre +txt2;
+            }
+			// alle else if'ene skal dekke alle mulige utfall/rekkefølger f.eks om det du har skrivd i input 1 er større enn 2 og mindre enn 3 så puttes den på plass #2 i infoDiv
+			// eller om inputet i #3 er mindre enn alle de andre så kommer den først osv osv - er egentlig bare sortering! :D 
+            else {
+        }      infoDiv.innerHTML += ' ';  //hvis alle inputsa er tomme - så vis blankt x)
+        }
+
+    </script>
+
+</body>
+</html>

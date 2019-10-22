@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Button Madness!!</title>
+    <style>
+        #divCounter {
+            text-align: center;
+            font-size: 170px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">Button Madness!</h1>
+
+    <button class="Knapp" onclick="myFunction()">Endre Bakgrunn 16 Millioner valg</button>
+
+    <div id="divCounter">Trykk 100 ganger og se hva som skjer</div>
+
+    <script>
+        let counter = 0;
+        let x = document.createElement("IMG");
+        let divWithCounterInIt = document.getElementById("divCounter");
+        let header = document.getElementById("header");
+
+
+        function myFunction() {
+
+            let far = Math.floor(Math.random() * 255);
+            let farg = Math.floor(Math.random() * 255);
+            let farge = Math.floor(Math.random() * 255);
+
+            document.body.style.background = `rgb(${far}, ${farg}, ${farge})`;
+            counter++;
+            document.getElementById('divCounter').innerHTML = counter;
+
+            if (counter == 100) {
+                document.body.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/5/56/Bsodwindows10.png')";
+                divWithCounterInIt.innerHTML = " ";
+                header.innerHTML = " ";
+            }
+            if (counter >= 100) {
+                counter = 0; 
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>

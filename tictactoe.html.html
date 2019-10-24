@@ -54,17 +54,17 @@
     </div>
     <button onclick="restart()">Restart</button>
     <script>
-        var box1;
-        var box2;
-        var box3;
-        var box4;
-        var box5;
-        var box6;
-        var box7;
-        var box8;
-        var box9;
-        var isGameFinished = false;
-        var moves = 0;
+        let box1;
+        let box2;
+        let box3;
+        let box4;
+        let box5;
+        let box6;
+        let box7;
+        let box8;
+        let box9;
+        let isGameFinished = false;
+        let moves = 0;
         function settX(button) {
             if (button.innerHTML == "O" || button.innerHTML == "X") return;
             if (isGameFinished == false) {
@@ -76,14 +76,14 @@
                 setO();
                 chekwinning("o");
             }
-
+            
 
 
         }
-        var item = document.getElementsByClassName("grid-item");
+        let item = document.getElementsByClassName("grid-item");
         function setO() {
             // document.getElementsByClassName("grid-item")[7].innerHTML = "O"
-            var O = Math.floor(Math.random() * item.length)
+            let O = Math.floor(Math.random() * item.length)
             if (item[O].innerHTML != "X" && item[O].innerHTML != "O") {
                 item[O].innerHTML = "O";
             } else {

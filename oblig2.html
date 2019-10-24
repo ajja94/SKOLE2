@@ -12,14 +12,14 @@
     </div>
     Valgt stolpe: <i>ingen</i><br />
     Verdi: <input type="number" min="1" max="10" /><button>Legg til stolpe</button>
-    <button disabled>Endre valgt stolpe</button><br />
-    <button disabled>Fjerne valgt stolpe</button>
+    <button id="change" onclick="change()" disabled>Endre valgt stolpe</button><br />
+    <button id="valgt" onclick="valgt()" disabled>Fjerne valgt stolpe</button>
 
     <script>
-    // hjelpevariable for både view og controller
-    var svgTag = document.getElementById('chart');
+    // hjelpeletiable for både view og controller
+    let svgTag = document.getElementById('chart');
 
-    // model
+     // model
     let numbers = [7, 3, 1, 5, 8];
 
     // view
@@ -44,14 +44,16 @@
     }
 
     function calcColor(min, max, val) {
-        var minHue = 240, maxHue = 0;
-        var curPercent = (val - min) / (max - min);
-        var colString = "hsl(" + ((curPercent * (maxHue - minHue)) + minHue) + ",100%,50%)";
+        let minHue = 240, maxHue = 0;
+        let curPercent = (val - min) / (max - min);
+        let colString = "hsl(" + ((curPercent * (maxHue - minHue)) + minHue) + ",100%,50%)";
         return colString;
     }
 
     // controller (ingenting her ennå)
+
     </script>
+
 
 
 </body>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        // hjelpeletiabler for view og controller
+        let contentDiv = document.getElementById('content');
+
+        // model
+        let sum = 0;
+        let count = 0;
+
+        // view
+        show();
+        function show() {
+            contentDiv.innerHTML = `
+            <p>Skriv tall i feltet og få summen, gjennomsnitt og antall.</p>
+
+            Tall: <input type="number" id="number" value="">
+            <button onclick="add()">Legg til</button>
+            <button onclick="reset()">Nullstill</button>
+            <table>
+            <tr><td>Sum:</td><td>${sum}</td></tr>
+            <tr><td>Gjennomsnitt:</td><td>${count == 0 ? '<i>NA</i>' : sum / count}</td></tr>
+            <tr><td>Antall tall:</td><td>${count}</td></tr>
+            </table>
+             `;
+        }
+
+        // controller
+        function add() {
+            count++;
+        }
+
+        function reset() {
+        }
+
+    </script>
+</body>
+</html>

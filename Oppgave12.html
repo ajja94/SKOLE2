@@ -18,15 +18,15 @@
         tilfeldigFirkant();
 
         function tilfeldigFirkant() {
-            var endX = tilfeldigTall(window.innerWidth * 0.2, window.innerWidth);
-            var endY = tilfeldigTall(window.innerHeight * 0.2, window.innerHeight);
-            var startX = tilfeldigTall(1, endX * 0.8);
-            var startY = tilfeldigTall(1, endY * 0.8);
-            var bredde = endX - startX;
-            var høyde = endY - startY;
-            var farge = tilfeldigFarge();
-            var bokstav = tilfeldigBokstav();
-            var divHtml = '<div style="' +
+            let endX = tilfeldigTall(window.innerWidth * 0.2, window.innerWidth);
+            let endY = tilfeldigTall(window.innerHeight * 0.2, window.innerHeight);
+            let startX = tilfeldigTall(1, endX * 0.8);
+            let startY = tilfeldigTall(1, endY * 0.8);
+            let bredde = endX - startX;
+            let høyde = endY - startY;
+            let farge = tilfeldigFarge();
+            let bokstav = tilfeldigBokstav();
+            let divHtml = '<div style="' +
                 delAvStylePx('left', startX) +
                 delAvStylePx('top', startY) +
                 delAvStylePx('width', bredde) +
@@ -53,13 +53,13 @@
                 tilfeldigTallEllerBokstavABCDEF();
         }
         function tilfeldigTallEllerBokstavABCDEF() {
-            var tall = tilfeldigTall(0, 15);
+            let tall = tilfeldigTall(0, 15);
             if (tall < 10) return tall;
             const charCodeA = 'a'.charCodeAt(0);
             return String.fromCharCode(tall - 10 + charCodeA);
         }
         function tilfeldigBokstav() {
-            var tall2 = tilfeldigTall(0, 28);
+            let tall2 = tilfeldigTall(0, 28);
             if (tall2 == 28) return "å";
             if (tall2 == 27) return "ø";
             if (tall2 == 26) return "æ";

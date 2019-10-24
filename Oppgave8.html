@@ -47,10 +47,10 @@
     <input id="chk4" name="chk" type="radio" onchange="toggleStyle4(this)" />
 
     <script>
-        var textInput = document.getElementById('text');
-        var h2Element = document.getElementById('overskrift');
-        var checkboxInput = document.getElementById('checkbox');
-        var valgtDiv;
+        let textInput = document.getElementById('text');
+        let h2Element = document.getElementById('overskrift');
+        let checkboxInput = document.getElementById('checkbox');
+        let valgtDiv;
 
         function divChooser(chosenDiv) {
 
@@ -58,27 +58,27 @@
         }
 
         function toggleStyle() {
-            var isChecked = document.getElementById('chk').checked;
+            let isChecked = document.getElementById('chk').checked;
             valgtDiv.classList = '';
             valgtDiv.classList.toggle('stil', isChecked);
         }
         function toggleStyle1() {
-            var isChecked = document.getElementById('chk1').checked;
+            let isChecked = document.getElementById('chk1').checked;
             valgtDiv.classList = '';
             valgtDiv.classList.toggle('stil1', isChecked);
         }
         function toggleStyle2() {
-            var isChecked = document.getElementById('chk2').checked;
+            let isChecked = document.getElementById('chk2').checked;
             valgtDiv.classList = '';
             valgtDiv.classList.toggle('stil2', isChecked);
         }
         function toggleStyle3() {
-            var isChecked = document.getElementById('chk3').checked;
+            let isChecked = document.getElementById('chk3').checked;
             valgtDiv.classList = '';
             valgtDiv.classList.toggle('stil3', isChecked);
         }
         function toggleStyle4() {
-            var isChecked = document.getElementById('chk4').checked;
+            let isChecked = document.getElementById('chk4').checked;
             valgtDiv.classList = '';
             valgtDiv.classList.toggle('stil4', isChecked);
         }

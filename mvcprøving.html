@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MVC</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="the-div" onclick="clickDiv()"></div>
+
+    <script>
+        let theDiv = document.getElementById('the-div');
+
+        // Model
+        let color = 'blue';
+        let border = ' ';
+
+        // View
+        show();
+        function show() {
+            theDiv.style.backgroundColor = color;
+        }
+
+        // Controller
+        function clickDiv() {
+            color = 'red';
+            //if (theDiv = color('red')
+            //    return color = 'blue';
+            show();
+        }
+    </script>
+</body>
+
+</html>

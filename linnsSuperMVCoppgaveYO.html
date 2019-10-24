@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input id="textInput" type="text" onchange="mrController(this)" />
+    <div id="output"> </div>
+
+    <script>
+        //model  - letiabler & getbyId's og sånt
+
+        let output = document.getElementById('output');
+        let fromInput = " ";
+        let textInput = document.getElementById('textInput');
+
+        //view  - printe ut i output div'en med ` her kommer teksten og sånn!  og kanskje noen ${letiabler}!`
+
+        function show() {
+            let allMinHTML = `
+                <li> ${ fromInput } </li>
+            `;
+            output.innerHTML += allMinHTML;
+        }
+     
+
+        //controller - her er funksjonene du lager
+
+        function mrController(textFromInput) {
+            fromInput = textFromInput.value;
+            show();
+            textFromInput.value = ' ';
+        }
+    </script>
+
+</body>
+</html>

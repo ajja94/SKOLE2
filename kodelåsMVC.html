@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Kodelås</title>
+    <title>KodelåsMVC</title>
     <style>
         body {
             background-color: cornflowerblue;
@@ -54,11 +54,32 @@
 </head>
 <body>
     <h1>Trykk inn 4 tall og knekk koden</h1>
-    <div id="tall" class="grid-container1">knekk koden</div>
+  
     <br />
-    <div class="grid-container">
+    <div id="outputDiv" class="grid-container">
 
-        <div class="grid-item" onclick="enterdSoFar(this)">1</div>
+    
+
+    </div>
+
+    <div id="message"></div>
+    <!--model-->
+    <script>
+        let boxok;
+        let tall = document.getElementById("tall");
+        let output = document.getElementById("outputDiv");
+        let correctCode = '8521';
+        let numberenterdSoFar = '';
+        let length = 0;
+        let count = 0;
+       // let ok;
+        let display = '';
+
+        //View
+        show();
+        function show() {
+            let html = `   <div id="tall" class="grid-container1">knekk koden</div>
+    <div class="grid-item" onclick="enterdSoFar(this)">1</div>
         <div class="grid-item" onclick="enterdSoFar(this)">2</div>
         <div class="grid-item" onclick="enterdSoFar(this)">3</div>
         <div class="grid-item" onclick="enterdSoFar(this)">4</div>
@@ -69,36 +90,32 @@
         <div class="grid-item" onclick="enterdSoFar(this)">9</div>
         <div class="grid-item1" onclick="ok()">ok</div><br />
 
-    </div>
-    <div id="message"></div>
-    <script>
-        let boxok;
-        let tall = document.getElementById("tall");
-        let correctCode = '8521';
-        let numberenterdSoFar = '';
-        let length = 0;
-        let count = 0;
-        let ok;
+            `
+            output.innerHTML = html;
+            tall.innerHTML = display;
+        }
 
+        //controller
         function enterdSoFar(trykket) {
             numberenterdSoFar += trykket.innerHTML;
-            tall.innerHTML = numberenterdSoFar;
+            display = numberenterdSoFar;
+            show();
         }
 
         function ok() {
 
             if (numberenterdSoFar == correctCode) {
                 clear();
-                tall.innerHTML = "YEY!!!";
-            }
-            
-            else if (numberenterdSoFar.length  >= 4) {
-                clear();
-                tall.innerHTML = "Feil kode!"
+                display = "YEY!!!";
             }
 
+            else if (numberenterdSoFar.length >= 4) {
+                clear();
+                display = "Feil kode!"
+            }
+            show();
         }
-          function clear() {
+        function clear() {
             numberenterdSoFar = "";
         }
     </script>

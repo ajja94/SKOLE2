@@ -14,16 +14,16 @@
     <div id="resultat"></div>
 
     <script>
-        var resultatDiv = document.getElementById('resultat');
-        var breddeInput = document.getElementById('bredde');
-        var høydeInput = document.getElementById('høyde');
+        let resultatDiv = document.getElementById('resultat');
+        let breddeInput = document.getElementById('bredde');
+        let høydeInput = document.getElementById('høyde');
 
         calculate();
         function calculate() {
-            var bredde = parseInt(breddeInput.value);
-            var høyde = parseInt(høydeInput.value);
-            var produkt = bredde * høyde;
-            var omkrets = (2 * bredde + 2 * høyde);
+            let bredde = parseInt(breddeInput.value);
+            let høyde = parseInt(høydeInput.value);
+            let produkt = bredde * høyde;
+            let omkrets = (2 * bredde + 2 * høyde);
 
             resultatDiv.innerHTML = 'Arealet er ' + ' ' +
                 bredde + '*' + høyde + '=' + produkt + '<br/>' +

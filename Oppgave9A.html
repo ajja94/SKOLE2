@@ -18,12 +18,12 @@
     <div id="resultat"></div>
 
     <script>
-        var resultatDiv = document.getElementById('resultat');
-        var breddeInput = document.getElementById('bredde');
-        var høydeInput = document.getElementById('høyde');
-        var buttonAInput = document.getElementById('A');
-        var buttonBInput = document.getElementById('B');
-        var valgtDiv;
+        let resultatDiv = document.getElementById('resultat');
+        let breddeInput = document.getElementById('bredde');
+        let høydeInput = document.getElementById('høyde');
+        let buttonAInput = document.getElementById('A');
+        let buttonBInput = document.getElementById('B');
+        let valgtDiv;
 
         chooseBox();
         function chooseBox(divBokstav) {
@@ -32,9 +32,9 @@
 
 
         function calculate() {
-            var bredde = breddeInput.value;
-            var høyde = høydeInput.value;
-            var arealSum = bredde * høyde;
+            let bredde = breddeInput.value;
+            let høyde = høydeInput.value;
+            let arealSum = bredde * høyde;
 
             valgtDiv.style.width = bredde + 'px';
             valgtDiv.style.height = høyde + 'px';

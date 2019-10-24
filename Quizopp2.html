@@ -49,16 +49,16 @@
     <button onclick="M()">1815</button>
     <button onclick="N()">1914</button>
     <button onclick="O()">1814</button>
-    <div id="riktigesvar">
+    <div id="riktigeslet">
     </div>
-    <div id="feilsvar">
+    <div id="feilslet">
     </div>
     <script>
 
-        var AntallRiktig = 0;
-        var AntallFeil = 0;
-        var checkwinning = 5;
-        svar();
+        let AntallRiktig = 0;
+        let AntallFeil = 0;
+        let checkwinning = 5;
+        slet();
 
         function Tilbake() {
               window.location.href = "obli1.html";
@@ -67,83 +67,83 @@
         function A() {
             document.getElementById('A').innerHTML = 'Riktig!';
             AntallRiktig++;
-            svar();
+            slet();
         }
         function B() {
             document.getElementById('A').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function C() {
             document.getElementById('A').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function D() {
             document.getElementById('E').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function E() {
             document.getElementById('E').innerHTML = 'Riktig!';
             AntallRiktig++;
-            svar();
+            slet();
         }
         function F() {
             document.getElementById('E').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function G() {
             document.getElementById('G').innerHTML = 'Riktig!';
             AntallRiktig++;
-            svar();
+            slet();
         }
         function H() {
             document.getElementById('G').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function I() {
             document.getElementById('G').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function J() {
             document.getElementById('L').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function K() {
             document.getElementById('L').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function L() {
             document.getElementById('L').innerHTML = 'Riktig!';
             AntallRiktig++;
-            svar();
+            slet();
         }
         function M() {
             document.getElementById('O').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function N() {
             document.getElementById('O').innerHTML = 'FEIL';
             AntallFeil++;
-            svar();
+            slet();
         }
         function O() {
             document.getElementById('O').innerHTML = 'Riktig!';
             AntallRiktig++;
-            svar();
+            slet();
         }
 
-        function svar() {
+        function slet() {
             console.log(AntallFeil, AntallRiktig);
-            document.getElementById('riktigesvar').innerHTML = AntallRiktig;
-            document.getElementById('feilsvar').innerHTML = AntallFeil;
+            document.getElementById('riktigeslet').innerHTML = AntallRiktig;
+            document.getElementById('feilslet').innerHTML = AntallFeil;
             if (checkwinning == AntallRiktig + AntallFeil) {
                 alert: ("VANT");
                 AntallRiktig = 0;

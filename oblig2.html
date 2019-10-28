@@ -5,53 +5,127 @@
     <meta charset="utf-8" />
     <title>Oblig2</title>
 
+
 </head>
 <body>
     <div>
-        <svg id="chart" width="500" viewBox="0 0 80 60"></svg>
+        <br />
+        <br />
+        <svg id="chart" height="625" viewBox="0 0 150 100"></svg>
     </div>
-    Valgt stolpe: <i>ingen</i><br />
-    Verdi: <input type="number" min="1" max="10" /><button>Legg til stolpe</button>
-    <button id="change" onclick="change()" disabled>Endre valgt stolpe</button><br />
-    <button id="valgt" onclick="valgt()" disabled>Fjerne valgt stolpe</button>
+    Valgt stolpe: <i id="valgtStolpe">ingen</i><br />
+    Verdi: <input id="values" type="number" min="1" max="10" />
+    <button id="leggTilStolpe" onclick="LeggTil()">Legg til stolpe</button>
+    <button id="changeBar" onclick="change()" disabled>Endre valgt stolpe</button><br />
+    <button id="removeBar" onclick="remove()" disabled>Fjerne valgt stolpe</button>
+
 
     <script>
-    // hjelpeletiable for både view og controller
-    let svgTag = document.getElementById('chart');
+        // hjelpeletiable for både view og controller
+        let svgTag = document.getElementById('chart');
+        let changeBar = document.getElementById("change");
+        let leggTilStolpe = document.getElementById("LeggTil");
+        /* let removeBar = document.getElementById("remove");*/
+        let valgtStolpe = document.getElementById("valgtStolpe");
+        let buttonchange = document.getElementById("changeBar");
+        let buttonremove = document.getElementById("removeBar");
+        let verdiStolpe = document.getElementById("values");
 
-     // model
-    let numbers = [7, 3, 1, 5, 8];
 
-    // view
-    showChart();
-    function showChart() {
-        let svgInnerHtml = '';
-        for (let i = 0; i < numbers.length; i++) {
-            svgInnerHtml += createBar(numbers[i], i + 1);
+
+
+        // model
+        let numbers = [7, 3, 1, 5, 8];
+        let valgtNumber = "none";
+        let selectedBarIndex = 0;
+
+
+        // view
+        showChart();
+        function showChart() {
+            let svgInnerHtml = '';
+            for (let i = 0; i < numbers.length; i++) {
+                let border = 'none';
+                let barNo = i + 1;
+                if (barNo == valgtNumber) {
+                    border = 'black';
+                }
+                svgInnerHtml += createBar(numbers[i], i + 1, border);
+            }
+            svgTag.innerHTML = svgInnerHtml;
         }
-        svgTag.innerHTML = svgInnerHtml;
-    }
 
-    function createBar(number, barNo) {
-        const width = 8;
-        const spacing = 2;
-        let x = (barNo - 1) * (width + spacing);
-        let height = number * 10;
-        let y = 60 - height;
-        let color = calcColor(1, 10, barNo);
-        return `<rect width="${width}" height="${height}"
-                            x="${x}" y="${y}" fill="${color}"></rect>`;
-    }
+        function createBar(number, barNo, border) {
+            const width = 8;
+            const spacing = 2;
+            let x = (barNo - 1) * (width + spacing);
+            let height = number * 10;
+            let y = 100 - height;
+            let color = calcColor(1, 10, barNo);
+            return `<rect onclick="selectBar(${barNo})" width="${width}" height="${height}"
+                                    x="${x}" y="${y}" stroke="${border}" fill="${color}"></rect>`;
+            console.log('kjør');
+        }
 
-    function calcColor(min, max, val) {
-        let minHue = 240, maxHue = 0;
-        let curPercent = (val - min) / (max - min);
-        let colString = "hsl(" + ((curPercent * (maxHue - minHue)) + minHue) + ",100%,50%)";
-        return colString;
-    }
+        function calcColor(min, max, val) {
+            let minHue = 240, maxHue = 0;
+            let curPercent = (val - min) / (max - min);
+            let colString = "hsl(" + ((curPercent * (maxHue - minHue)) + minHue) + ",100%,50%)";
+            return colString;
+        }
 
-    // controller (ingenting her ennå)
 
+        // controller (ingenting her ennå)
+        //å lage en funksjon som velger stolpen man har trykket på
+        function selectBar(barNo) {
+            if (barNo == valgtNumber) {
+                valgtNumber = "none";
+                buttonchange.disabled = true;
+                buttonremove.disabled = true;
+                //removeBar.disabled = false;
+
+            }
+            else {
+                valgtNumber = barNo
+                buttonchange.disabled = false;
+                buttonremove.disabled = false;
+                //removeBar.disabled = true;
+            }
+            valgtStolpe.innerHTML = barNo;
+            //selectedBarIndex = barNo;
+            showChart();
+
+
+        }
+
+        function remove() {
+            numbers.splice(valgtNumber - 1, 1);
+            valgtNumber = "none";
+            buttonchange.disabled = true;
+            buttonremove.disabled = true;
+
+            showChart();
+
+        }
+
+        function LeggTil() {
+            numbers.push(verdiStolpe.value);
+            valgtNumber = "none";
+            buttonchange.disabled = true;
+            LeggTil.disabled = true;
+
+            showChart();
+
+        }
+        function change() {
+            numbers[valgtNumber - 1] = verdiStolpe.value;
+            valgtNumber = "none";
+            buttonchange.disabled = true;
+            buttonremove.disabled = true;
+
+            showChart();
+
+        }
     </script>
 
 

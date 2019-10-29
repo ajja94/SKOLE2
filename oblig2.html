@@ -63,8 +63,8 @@
             let y = 100 - height;
             let color = calcColor(1, 10, barNo);
             return `<rect onclick="selectBar(${barNo})" width="${width}" height="${height}"
-                                    x="${x}" y="${y}" stroke="${border}" fill="${color}"></rect>`;
-            console.log('kjør');
+                                        x="${x}" y="${y}" stroke="${border}" fill="${color}"></rect>`;
+            //console.log('kjør');
         }
 
         function calcColor(min, max, val) {
@@ -86,7 +86,7 @@
 
             }
             else {
-                valgtNumber = barNo
+                valgtNumber = barNo;
                 buttonchange.disabled = false;
                 buttonremove.disabled = false;
                 //removeBar.disabled = true;
@@ -109,21 +109,33 @@
         }
 
         function LeggTil() {
-            numbers.push(verdiStolpe.value);
-            valgtNumber = "none";
-            buttonchange.disabled = true;
-            LeggTil.disabled = true;
+            if (verdiStolpe.value >= 1 && verdiStolpe.value <= 10) {
+                numbers.push(verdiStolpe.value);
+                valgtNumber = "none";
+                buttonchange.disabled = true;
+                LeggTil.disabled = true;
 
+            }
+            else {
+                alert("Ugyldig verdi!!!!!!!!!!!!!!!!!");
+            }
             showChart();
+
 
         }
         function change() {
-            numbers[valgtNumber - 1] = verdiStolpe.value;
-            valgtNumber = "none";
-            buttonchange.disabled = true;
-            buttonremove.disabled = true;
+            if (verdiStolpe.value >= 1 && verdiStolpe.value <= 10) {
+                numbers[valgtNumber - 1] = verdiStolpe.value;
+                valgtNumber = "none";
+                buttonchange.disabled = true;
+                buttonremove.disabled = true;
 
+            }
+            else {
+                alert("Ugyldig verdi!!!!!!!!!!!!!!!!!");
+            }
             showChart();
+
 
         }
     </script>

@@ -31,13 +31,9 @@
         let buttonremove = document.getElementById("removeBar");
         let verdiStolpe = document.getElementById("values");
 
-
-
-
         // model
         let numbers = [7, 3, 1, 5, 8];
-        let valgtNumber = "none";
-        let selectedBarIndex = 0;
+        let selectedBarNo = null;
 
 
         // view
@@ -47,12 +43,16 @@
             for (let i = 0; i < numbers.length; i++) {
                 let border = 'none';
                 let barNo = i + 1;
-                if (barNo == valgtNumber) {
+                if (barNo == selectedBarNo) {
                     border = 'black';
                 }
                 svgInnerHtml += createBar(numbers[i], i + 1, border);
             }
             svgTag.innerHTML = svgInnerHtml;
+            let hasSelected = selectedBarNo != null;
+            buttonchange.disabled = !hasSelected;
+            buttonremove.disabled = !hasSelected;
+            valgtStolpe.innerHTML = selectedBarNo || 'None';
         }
 
         function createBar(number, barNo, border) {
@@ -63,7 +63,7 @@
             let y = 100 - height;
             let color = calcColor(1, 10, barNo);
             return `<rect onclick="selectBar(${barNo})" width="${width}" height="${height}"
-                                        x="${x}" y="${y}" stroke="${border}" fill="${color}"></rect>`;
+                                            x="${x}" y="${y}" stroke="${border}" fill="${color}"></rect>`;
             //console.log('kjør');
         }
 
@@ -78,34 +78,14 @@
         // controller (ingenting her ennå)
         //å lage en funksjon som velger stolpen man har trykket på
         function selectBar(barNo) {
-            if (barNo == valgtNumber) {
-                valgtNumber = "none";
-                buttonchange.disabled = true;
-                buttonremove.disabled = true;
-                //removeBar.disabled = false;
-
-            }
-            else {
-                valgtNumber = barNo;
-                buttonchange.disabled = false;
-                buttonremove.disabled = false;
-                //removeBar.disabled = true;
-            }
-            valgtStolpe.innerHTML = barNo;
-            //selectedBarIndex = barNo;
+            let isDeselect = barNo == selectedBarNo;
+            selectedBarNo = isDeselect ? null : barNo;
             showChart();
-
-
         }
 
         function remove() {
-            numbers.splice(valgtNumber - 1, 1);
-            valgtNumber = "none";
-            buttonchange.disabled = true;
-            buttonremove.disabled = true;
-
+            numbers.splice(selectedBarNo - 1, 1);
             showChart();
-
         }
 
         function LeggTil() {
@@ -125,18 +105,13 @@
         }
         function change() {
             if (verdiStolpe.value >= 1 && verdiStolpe.value <= 10) {
-                numbers[valgtNumber - 1] = verdiStolpe.value;
+                numbers[selectedBarNo - 1] = verdiStolpe.value;
                 valgtNumber = "none";
-                buttonchange.disabled = true;
-                buttonremove.disabled = true;
-
             }
             else {
-                alert("Ugyldig verdi!!!!!!!!!!!!!!!!!");
+                alert("Ugyldig verdi!!");
             }
             showChart();
-
-
         }
     </script>
 

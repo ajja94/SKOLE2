@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        // model
+        let model = ["Melk", "Brød", "Sjokolade"];
+
+        // view
+        show();
+        function show() {
+            let list = '';
+            for (let i = 0; i < model.length; i++) {
+                let thing = model[i];
+
+                list += `
+                        <input type="checkbox"
+                               onclick="changeDone(${i}, this.checked)"  />
+
+                                ${thing}
+                        <button onclick="remove(${i})">x</button>
+                    <br/>`;
+            }
+
+            document.getElementById('content').innerHTML = `
+                    <h2>Handleliste</h2>
+
+                    Vare:<br/>
+                    <input id="itemInput" type="text"/><br/>
+                    <button onclick="addNew()">Legg til</button><br/>
+
+                    ${list}
+                    `;
+        }
+
+        // controller
+        function remove(index) {
+            model.splice(index, 1);
+            show();
+        }
+
+        function changeDone(index, isDone) {
+            model[index].isDone = isDone;
+            show();
+        }
+
+        function addNew() {
+            let newThing = getValue('itemInput');
+
+            model.push(newThing);
+            show();
+        }
+
+        function getValue(id) {
+            return document.getElementById(id).value;
+        }
+    </script>
+</body>
+</html>

@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TrollBike-proto",
+    "\\TrollBike-proto\\TrollBike-proto"
   ],
   "SelectedNode": "\\.gitattributes",
   "PreviewInSolutionExplorer": false

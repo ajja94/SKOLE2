@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Søknad</title>
+    <link rel="stylesheet" type="text/css" href="cssSøknad.css" />
+
+
+</head>
+<body>
+    <h1 class="header">'navn' Søknad modul 3</h1>
+
+    <div id="content"></div>
+  
+    <!--<h1>Hei</h1>-->
+
+    <script>
+        let content = document.getElementById('content');
+
+     //models
+        const model = [
+            'why',
+            'needs',
+            'strengths',
+        ]
+
+     //view
+        show();
+        function show(){
+        for(var i = 0; i < model.length; i++){
+            content.innerHTML += `<div class="flipCard"> 
+                                    <div class="card"  onclick="this.classList.toggle('flipped');"> 
+                                      <div class="side front" id="frontText${i}">FRONT</div> 
+                                      <div class="side back" id="backText${i}">BACK<br/>Explanation</div>
+                                    </div>
+                                  </div>`
+        }
+            
+            document.getElementById('frontText0').innerHTML = "Hvorfor bør jeg få plassen?";
+            document.getElementById('frontText1').innerHTML = "Hva trenger jeg å jobbe mer med og hvordan du vil jobbe med dette?";
+            document.getElementById('frontText2').innerHTML = "Mine styrker";
+
+            document.getElementById('backText0').innerHTML = `<ul><li>hei</li><li>hei</li><li>hei</li><li>hei</li> </ul>`;
+            document.getElementById('backText1').innerHTML =  `<ul><li>hei</li><li>hei</li><li>hei</li><li>hei</li> </ul>`;
+            document.getElementById('backText2').innerHTML =  `<ul><li>hei</li><li>hei</li><li>hei</li><li>hei</li> </ul>`;
+        }
+        //frontText1.innerHTML = 'hei!'
+        
+
+     //controller
+        function flipp(){
+        
+        }
+
+    </script>
+</body>
+</html>

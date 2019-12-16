@@ -1,0 +1,29 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(#f69323, #dc7a09, #7a4405, #7a4405);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "header header header" "meny mainContent mainContent" "footer footer footer";
+    grid-auto-rows: 2fr 17fr 1fr;
+    grid-template-columns: 2fr 12fr;
+}
+header {
+    
+    padding: 20px;
+    width: 300vh;
+}
+
+    header > h1 {
+        color: black;
+        text-align-last: center;
+        font-family: 'Comic Sans MS';
+        position: absolute;
+        top: 30px;
+        left: 650px;
+    }

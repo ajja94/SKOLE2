@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOL</title>
+    <style>
+        body {
+            background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v268batch2-kul-06_2.jpg?auto=format&bg=F4F4F3&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1200&s=2e2e9939ca07b18efb2fd69c1ee6a982);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Handlelise</h1>
+
+    <input id="textInput" type="text" onchange="lista(this)"/>
+    <div id="output"></div>
+
+    <script>
+
+        //model
+        let output = document.getElementById('output');
+        let textInput = document.getElementById('textInput')
+        let fromInput = ' ';
+        let isChekd = false;
+
+        //view
+        function show() {
+            if (fromInput != ' ') {
+            let alt = `
+             <input type='checkbox'> ${fromInput}</input><br>`;
+            output.innerHTML += alt;
+                
+            }
+        }
+        show();
+        
+        //controller
+        function lista(textFromInput) {
+            fromInput = textFromInput.value;
+            textFromInput.value = ' ';
+            show();
+
+        }
+     
+    </script>
+
+</body>
+</html>

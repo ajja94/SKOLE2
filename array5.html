@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Array5</title>
+    <style>
+        body{
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        //model 
+        let model = ["brød", "melk", "smil", "ugle"]
+
+        //view
+        show();
+        function show() {
+            let list = '';
+            for (let i = 0; i < model.length; i++) {
+                let thing = model[i];
+
+                list += ` <input type="radio"/>
+                ${thing}
+                <button onclick="remove(${i})">x</button>
+               <br> `
+            }
+            document.getElementById('content').innerHTML = ` 
+            <h1>Huske liste</h1>
+          
+            vare:<br>
+            <input id="itemInput" type="text"/>
+            <button onclick="addNew()">ADD</button><br>
+            ${list} `
+        }
+
+        //controller
+
+        function remove(index) {
+            model.splice(index, 1)
+            show();
+        console.log('kjører');
+        }
+        function addNew() {
+            let newThing = getValue('itemInput');
+            model.push(newThing)
+            show();
+        }
+        function getValue(id) {
+            return document.getElementById(id).value;
+        }
+        show();
+    </script>
+
+</body>
+</html>

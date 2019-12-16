@@ -1,0 +1,11 @@
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\bin\Debug\netcoreapp3.0\c.test.exe
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\bin\Debug\netcoreapp3.0\c.test.deps.json
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\bin\Debug\netcoreapp3.0\c.test.runtimeconfig.json
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\bin\Debug\netcoreapp3.0\c.test.runtimeconfig.dev.json
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\bin\Debug\netcoreapp3.0\c.test.dll
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\bin\Debug\netcoreapp3.0\c.test.pdb
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\obj\Debug\netcoreapp3.0\c.test.csprojAssemblyReference.cache
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\obj\Debug\netcoreapp3.0\c.test.AssemblyInfoInputs.cache
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\obj\Debug\netcoreapp3.0\c.test.AssemblyInfo.cs
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\obj\Debug\netcoreapp3.0\c.test.dll
+C:\Users\Anja\Documents\SKOLE\c#\c.test\c.test\obj\Debug\netcoreapp3.0\c.test.pdb

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>listogløk7</title>
+    <style>
+        body{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Huske Liste med kalender</h2>
+    <input id="rogn" type="text" onchange="liste(this)" />
+    <div id="output"></div>
+
+    <script>
+
+        //model
+        let fromInput = ' ';
+        let textInput = document.getElementById('textInput');
+        let output = document.getElementById('output');
+
+        //view
+        show()
+        function show() {
+            if (fromInput != ' ') {
+                let alt = `<input type='datetime-local'> ${fromInput}</input><br>  `
+                output.innerHTML += alt;
+            }
+        }
+        show();
+
+        //controller
+        function liste(textFromInput) {
+            fromInput = textFromInput.value;
+            textFromInput.value = ' ';
+            show();
+        }
+
+    </script>
+           
+</body>
+</html>

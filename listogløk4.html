@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Lister</title>
+<style>
+    body{
+        background-color: hotpink;
+    }
+</style>
+</head>
+
+<body>
+    <h1>Liste løk4</h1>
+    <input id="børre" type="text" onchange="lister(this)" />
+    <div id="output"></div>
+
+
+    <script>
+        //model
+        let fromInput = ' ';
+        let textInput = document.getElementById('textInput');
+        let output = document.getElementById('output');
+
+        //view
+        show();
+        function show() {
+            if (fromInput != ' ') {
+                let alt = ` <input type = 'checkbox'> ${fromInput} </input><br> `;
+                output.innerHTML += alt;
+            }
+        }
+        show();
+        //controller
+        function lister (textFromInput) {
+            fromInput = textFromInput.value;
+            textFromInput.value = ' ';
+            show();
+        }
+    </script>
+
+</body>
+</html>

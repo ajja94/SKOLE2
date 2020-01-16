@@ -4,19 +4,21 @@
     box-sizing: border-box;
 }
 body {
-    background-image: linear-gradient(#f69323, #dc7a09, #7a4405, #7a4405);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #f69323;
+    width:100vw;
     height: 100vh;
-    display: grid;
+    /*display: grid;
     grid-template-areas: "header header header" "meny mainContent mainContent" "footer footer footer";
     grid-auto-rows: 2fr 17fr 1fr;
-    grid-template-columns: 2fr 12fr;
+    grid-template-columns: 1fr;*/
 }
 header {
     
-    padding: 20px;
-    width: 300vh;
+    /*padding: 20px;*/
+    height:20vh;
+    text-align:center;
+    width: 100vw;
+    
 }
 
     header > h1 {
@@ -27,3 +29,57 @@ header {
         top: 30px;
         left: 650px;
     }
+
+    .inputs{
+        display:inline-block;
+        position: center;
+        margin-left:43.5vw;
+        font-size: 2vw;
+    }
+
+#Knappen {
+    background-color: #231f20;
+    color: orange;
+    border: solid orange;
+    border-radius: 5em 5em;
+    position: fixed;
+    font-size: 2em;
+    left: 20em;
+    width: 15vw;
+    height: 5vh;
+    margin:auto;
+}
+#skroll{
+    font-size:2vw;
+    margin-left:43.5vw;
+    display: inline-block;
+}
+#MakeCrew {
+    /*font-size: 2vw;
+    margin-left: 43.5vw;
+    background-color: black;
+    color: white;
+    border:4px solid black;
+    border-radius: 20%;
+    width: 8vw;
+    text-align:center*/
+    background-color: #231f20;
+    color: orange;
+    border: solid orange;
+    border-radius: 5em 5em;
+    position: fixed;
+    font-size: 2em;
+    left:20em;
+    width: 15vw;
+    height: 5vh;
+   
+}
+.Gruppe{
+    padding: 20px;
+}
+.NavnBox{
+    margin-left:auto;
+    margin-right:auto;
+    width: 20vw;
+    font-size:3vh;
+}

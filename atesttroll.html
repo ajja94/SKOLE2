@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+        /*#container {
+            bottom: 7vh;
+        }*/
+        img {
+            height: 25em;
+            width: 25em;
+        }
+
+        .avatar {
+            height: 2em;
+            margin-top: 1em;
+            height: 1em;
+            width: 1em;
+            margin-left: 7em;
+        }
+
+        .avatar1 {
+            border: 1em solid #231f20;
+            border-radius: 50%;
+            margin: 8em;
+            padding: 1em;
+            display: inline-block;
+            font-size: 1em;
+        }
+
+        .prof {
+            /*height: 9em;
+            width: 45em;*/
+            /*left: 1em;*/
+            /*padding: 1.5em;*/
+            margin-left: 7em;
+            margin: 1.5em;
+            background-color: white;
+            color: black;
+            position: relative;
+            border-radius: 5em 5em;
+            display: list-item;
+            bottom: -30vh;
+            color: black;
+            font-size: 4em;
+        }
+    </style>
+    <script src="script/model.js"></script>
+</head>
+<body>
+    <div id="mapOverlay"></div>
+
+    <div class="avatar">
+        <div class="avatar1">
+            <img src="https://i.pinimg.com/originals/a4/70/c4/a470c4a117c6dad31a08568e310ad4a5.png" />
+        </div>
+    </div>
+
+    <div id="container">
+
+        <!--<input class="prof" id="uname" type="text" placeholder="   Username" />
+        <input class="prof" id="name" type="text" placeholder="   Name" />
+        <input class="prof" id="number" type="text" placeholder="    Number" />
+        <input class="prof" id="email" type="email" placeholder="E-mail" />-->
+
+    </div>
+
+    <script>
+        Profil();   
+        function Profil() {
+            let container = document.getElementById('container');
+            let user = model.user.filter(aUser => aUser.userName == model.currentUser)[0];
+
+            let html = `<input class="prof" id="uname" type="text" placeholder="   ${user.userName}" />
+        <input class="prof" id="name" type="text" placeholder="   ${user.name}"/>
+        <input class="prof" id="number" type="text" placeholder="    Number" />
+        <input class="prof" id="email" type="email" placeholder="    E-mail" />
+                                                <button id="LoggUt" class="loggUt" type="button"  onclick="Loggut()">Logg Ut</button>`;
+            container.innerHTML = html;
+        }
+
+    </script>
+</body>
+</html>

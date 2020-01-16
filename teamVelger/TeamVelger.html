@@ -9,5 +9,125 @@
         <h1>Team Velger</h1>
     </header>
 
+    <div id="content"></div>
+    <script>
+        //model
+        let middlertidigNavn = document.getElementById('Navn');
+        let numberOfChosen = 0;
+        //let numberOfGroupsNeeded = model.person.length / numberOfChosen; //sånn x)
+        let numberOfGrops = 0;
+
+        const content = document.getElementById('content');
+        let model = {
+
+            person: [
+              
+            ],
+            groups: []
+        }
+        //let html = "";
+        //view
+        show();
+        function show() {
+
+            let html = `<input class="inputs" id="leggTilPerson" type="text" placeholder="navn"/> <br>
+                        <div id="Knappen" onclick="nyperson()">Leggtil</div> <br>`;
+            let notValgt;
+
+            for (personer of model.person) {
+                //html+= `${personer.navn}<br>`
+                if (personer.valgt == true) {
+                    numberOfChosen++;
+                    html += ` <div class = "NavnBox" id="valgtBox">
+                                  <input id="nyPerson" type="checkbox" checked = ${personer.valgt}/>  ${personer.navn}
+                                 <br>
+                                 </div>
+                                `;
+                }
+                else if (personer.valgt === false) {
+                    notValgt += ` <div class ="NavnBox" id="ikkeValgtBox">
+                                      <input id="nyPerson" type="checkbox" checked = ${personer.valgt}/>
+                                      <br>
+                                      </div>
+                                `;
+                }
+            }
+            let options = "";
+            html += `<select id="skroll" onchange="LagGruppe(this)"> `;
+            for (i = 1; i <= 50; i++) {
+
+                options += `  <option value=${i}>${i}</option> `;
+            }
+            html += `${options} </select>`;
+
+
+            html += ` <div id="MakeCrew" onclick="Magic()">Make Crew</div>`;
+
+
+            if (model.groups.length > 0) {
+                for (var i = 0; i < model.groups.length; i++) {
+                    html += ` <div>
+                                <div class="Gruppe">Gruppe${i + 1}</div>
+                                <ul>`
+                    for (var j = 0; j < model.groups[i].persons.length; j++) {
+                        html += `<li>
+                             ${model.groups[i].persons[j].navn}
+                                </li>`
+                    }
+                    html += `</ul> </div>`
+
+
+
+                }
+            }
+            content.innerHTML = html;
+        }
+        
+        //controller
+
+
+        console.log(numberOfChosen, " <-- antall checka true dudes. forhåpentligvis spyr denne ut 2");
+        function nyperson() {
+            const navn = document.getElementById('leggTilPerson').value;
+            console.log(leggTilPerson.value);
+            //const id = model.personer.liste.map(p => p.id).reduce((max, value) => Math.max(max, value), -1) + 1;
+            model.person.push(
+                { navn: navn, valgt: true });
+            show();
+        }
+
+        function lagreData() {
+            //    model.person.navn.push
+        }
+
+
+        function LagGruppe(antallGrupper) {
+
+            numberOfGrops = antallGrupper.value;
+        }
+
+        function Magic() {
+            for (let i = 0; i < numberOfGrops; i++) {
+                let numberOfPplInGrp = model.person.length / (numberOfGrops - i);
+                let group = { persons: [] };
+                for (; numberOfPplInGrp > 0; numberOfPplInGrp--) {
+                    let randomPerson = Math.floor(Math.random() * model.person.length);
+                    let person = model.person[randomPerson];
+                    group.persons.push(person);
+                    model.person.splice(randomPerson, 1);
+                }
+                model.groups.push(group);
+            }
+            show();
+        }
+            //function valgt(add) {
+                //if (add.value != '') {
+
+                //    model.person.valgt.push(add.value);
+                //    console.log('hei du er lagt til', add.value)
+                //}
+            //    show();
+            //}
+    </script>
 </body>
 </html>

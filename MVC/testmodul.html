@@ -1,0 +1,55 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div.colordiv {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            color: white;
+            border: 2px solid black;
+            border-radius: 20%;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <!--<input type="color"/>-->
+    <div id="content"></div>
+    <script>
+        let model = {
+            colors: [
+                {
+                    navn: 'Blå 1',
+                    kode: '#5555ff',
+                },
+                {
+                    navn: 'Rød 1',
+                    kode: '#ff5555',
+                },
+                {
+                    navn: 'Grønn 1',
+                    kode: '#55ff55',
+                },
+            ]
+        };
+
+        show();
+        function show() {
+            let html = '';
+
+            for (i = 0;i < model.colors.length;  i++ ) {
+               html += ` <div class="colordiv" style="background-color: ${model.colors[i].kode}; ">
+                   ${model.colors[i].navn}
+                </div>`
+            }
+            document.getElementById('content').innerHTML = html;
+        }
+
+    </script>
+</body>
+</html>
